@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-premium-dark: #0f172a;
+  --color-premium-accent: #10b981;
+  --color-premium-gold: #d4af37;
+  --color-premium-bg: #f8fafc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply font-sans text-slate-900 bg-white;
+  }
+}
+
+.premium-gradient {
+  background: radial-gradient(circle at top right, #f0fdf4, #ffffff);
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+}
+
+.nav-blur {
+  @apply bg-white/80 backdrop-blur-md border-b border-slate-100;
+}
+
+.btn-premium {
+  @apply relative overflow-hidden transition-all duration-300 active:scale-95;
+}
+
+.btn-premium::after {
+  content: '';
+  @apply absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300;
+}
+
+.btn-premium:hover::after {
+  @apply translate-y-0;
+}
+
+/* Custom WhatsApp Green */
+.bg-whatsapp {
+  background-color: #25D366;
+}
+
